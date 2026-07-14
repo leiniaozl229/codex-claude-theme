@@ -1,6 +1,6 @@
 # Codex Claude Theme Lab（中文使用指南）
 
-这是一个仅修改本地视觉层的 macOS 实验补丁。默认会复制你已安装的 Codex 客户端；也支持直接修改正式客户端。它不包含 OpenAI 或 Anthropic 的客户端二进制文件。
+这是一个仅修改本地视觉层的 macOS 实验补丁。它会复制你已安装的 Codex 客户端，仅修改副本；不包含 OpenAI 或 Anthropic 的客户端二进制文件。
 
 > 非官方项目，与 OpenAI 或 Anthropic 没有隶属、合作或背书关系。Codex 与 Claude 分别是其所属公司的商标。
 
@@ -15,7 +15,7 @@
 ## 前置条件
 
 - macOS
-- 已安装 Codex，默认位置为 `/Applications/ChatGPT.app`
+- 已安装 Codex，默认位置为 `/Applications/Codex.app`
 - 能使用终端，并已安装 Node.js（安装器会通过 `npx` 调用 `@electron/asar`）
 
 ## 安装：复制模式（默认）
@@ -43,29 +43,13 @@ open -n "$HOME/Applications/Codex Claude Lab.app" \
 
 独立数据目录意味着它不会覆盖正式版的缓存和会话状态；你可能需要在实验版中重新登录。
 
-## 安装：直接修改正式客户端
-
-如果希望保留当前登录、设置、缓存和任务数据，使用：
-
-```bash
-./install.sh --in-place
-```
-
-它直接修改 `/Applications/ChatGPT.app` 中的前端资源，首次运行会备份原始 `app.asar` 到：
-
-```text
-~/Library/Application Support/Codex Claude Theme/backups/<客户端版本>/app.asar
-```
-
-执行后重启 Codex 即可。直接模式会将官方签名替换为本机 ad-hoc 签名，并会被后续客户端更新覆盖；更新后再次运行同一命令即可重新应用主题。
-
 ## 自定义安装位置
 
 如果 Codex 不在默认目录，或希望换一个实验版名称：
 
 ```bash
 ./install.sh \
-  --source "/Applications/ChatGPT.app" \
+  --source "/Applications/Codex.app" \
   --target "$HOME/Applications/My Codex Theme.app"
 ```
 

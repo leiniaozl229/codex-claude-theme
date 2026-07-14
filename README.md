@@ -19,7 +19,7 @@ The installer detects those two files and enables the wordmark automatically. Co
 
 ## Install
 
-1. Install Codex for macOS in `/Applications/ChatGPT.app`.
+1. Install Codex for macOS in `/Applications/Codex.app`.
 2. Run:
 
 ```bash
@@ -31,16 +31,6 @@ chmod +x install.sh
 The themed copy is created at `~/Applications/Codex Claude Lab.app`.
 
 Source Serif 4 is bundled as a web font, so no separate font installation is needed. Its original SIL Open Font License is included at `assets/SourceSerif4-OFL.txt`.
-
-## Patch the installed client directly
-
-To keep the existing Codex login, settings, and local data, run:
-
-```bash
-./install.sh --in-place
-```
-
-Before patching, the installer stores the original `app.asar` under `~/Library/Application Support/Codex Claude Theme/backups/`. Restart Codex when it completes. This replaces the app's official signature with a local ad-hoc signature, and a future Codex update will overwrite the themed assets.
 
 ## Reapply after updates
 
