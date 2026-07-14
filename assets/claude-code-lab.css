@@ -1,0 +1,209 @@
+/* Codex Claude Lab — presentation-only override. */
+@font-face {
+  font-family: "Claude Theme Source Serif";
+  src: url("./SourceSerif4-VariableFont_opsz,wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+:root {
+  --claude-bg: #1f1e1b;
+  --claude-panel: #272522;
+  --claude-panel-raised: #302e2a;
+  --claude-line: #49453e;
+  --claude-ink: #f5f2ea;
+  --claude-muted: #b7b0a4;
+  --claude-accent: #d97757;
+  --claude-accent-hover: #e68a69;
+
+  --font-sans: "SF Mono", "Cascadia Code", "Menlo", monospace;
+  --font-mono: "SF Mono", "Cascadia Code", "Menlo", monospace;
+  --claude-display: "Claude Theme Source Serif", "Source Serif 4", "Source Han Serif SC VF", "思源宋体 VF", "Source Han Serif CN", serif;
+  --vscode-font-family: var(--font-sans);
+  --vscode-editor-font-family: var(--font-mono);
+  --vscode-font-weight: 400;
+  --vscode-editor-font-weight: 400;
+
+  --color-background-surface-under: var(--claude-bg);
+  --color-background-surface: var(--claude-bg);
+  --color-background-elevated-primary: var(--claude-panel);
+  --color-background-elevated-secondary: var(--claude-panel-raised);
+  --color-background-button-secondary: var(--claude-panel-raised);
+  --color-background-button-secondary-hover: #3b3832;
+  --color-background-accent: var(--claude-accent);
+  --color-background-accent-hover: var(--claude-accent-hover);
+  --color-background-accent-active: #bd6247;
+  --color-background-input: var(--claude-panel);
+  --color-background-status-warning: #5d4424;
+  --color-background-status-success: #294836;
+  --color-background-status-error: #613a36;
+
+  --color-token-bg-primary: var(--claude-bg);
+  --color-token-bg-secondary: var(--claude-panel);
+  --color-token-bg-fog: var(--claude-panel);
+  --color-token-main-surface-primary: var(--claude-bg);
+  --color-token-side-bar-background: var(--claude-panel);
+  --color-token-editor-background: var(--claude-panel);
+  --color-token-dropdown-background: var(--claude-panel-raised);
+  --color-token-input-background: var(--claude-panel);
+  --color-token-foreground: var(--claude-ink);
+  --color-token-text-primary: var(--claude-ink);
+  --color-token-text-secondary: var(--claude-muted);
+  --color-token-text-tertiary: #90897d;
+  --color-token-description-foreground: var(--claude-muted);
+  --color-token-button-foreground: #1f1e1b;
+  --color-token-border: var(--claude-line);
+  --color-token-border-default: var(--claude-line);
+  --color-token-border-light: #393631;
+  --color-token-border-heavy: #625c53;
+  --color-token-primary: var(--claude-accent);
+  --color-token-list-hover-background: #37332e;
+  --color-token-list-active-selection-background: #443a32;
+
+  --color-text-foreground: var(--claude-ink);
+  --color-text-foreground-tertiary: var(--claude-muted);
+  --color-text-accent: var(--claude-accent-hover);
+  --color-icon-primary: var(--claude-ink);
+  --color-icon-accent: var(--claude-accent-hover);
+  --color-border: var(--claude-line);
+  --color-border-light: #393631;
+  --color-border-heavy: #625c53;
+  --color-border-focus: var(--claude-accent);
+
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 7px;
+  --radius-xl: 8px;
+  --radius-2xl: 10px;
+  --radius-3xl: 12px;
+  --radius-token-row: 5px;
+  --elevation-stroke: 0 0 0 1px var(--claude-line);
+  --elevation-prominent: none;
+  --elevation-sidebar: none;
+}
+
+:root.electron-dark {
+  color-scheme: dark;
+}
+
+:root.electron-light {
+  --claude-bg: #f7f5f0;
+  --claude-panel: #eeece6;
+  --claude-panel-raised: #e4e0d8;
+  --claude-line: #c9c3b8;
+  --claude-ink: #27231e;
+  --claude-muted: #625c53;
+  --claude-accent: #b9553b;
+  --claude-accent-hover: #9f452f;
+
+  --color-background-button-secondary-hover: #d9d5cc;
+  --color-background-accent-active: #96402d;
+  --color-background-status-warning: #f4dfb4;
+  --color-background-status-success: #d5e8d8;
+  --color-background-status-error: #f1d7d2;
+  --color-token-list-hover-background: #dfdbd2;
+  --color-token-list-active-selection-background: #edcbbf;
+  --color-token-text-tertiary: #746d63;
+  --color-token-border-light: #d9d5cc;
+  --color-token-border-heavy: #aaa296;
+  --color-border-light: #d9d5cc;
+  --color-border-heavy: #aaa296;
+
+  color-scheme: light;
+}
+
+[data-codex-window-type="electron"] .app-shell-left-panel,
+[data-codex-window-type="electron"] .main-surface,
+.main-surface,
+.browser-main-surface {
+  box-shadow: none !important;
+}
+
+[data-codex-window-type="electron"] .app-shell-left-panel {
+  background: var(--claude-panel) !important;
+  border-right: 1px solid var(--claude-line);
+}
+
+button,
+[role="button"],
+input,
+textarea,
+[contenteditable="true"] {
+  font-family: var(--font-sans) !important;
+}
+
+button,
+[role="button"] {
+  border-radius: 5px !important;
+}
+
+/* Keep the working surface terminal-like, but give page titles an editorial voice. */
+h1,
+h2,
+h3,
+.heading-xl,
+.heading-lg {
+  font-family: var(--claude-display) !important;
+  font-variation-settings: "opsz" 32, "wght" 450;
+  font-weight: 450 !important;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+/* The current product label in the upper-left switcher shares the display face. */
+[aria-label^="Switch mode"],
+[aria-label^="Switch mode"] * {
+  font-family: var(--claude-display) !important;
+  font-variation-settings: "opsz" 20, "wght" 450;
+  font-weight: 450 !important;
+}
+
+.claude-lab-wordmark {
+  display: block;
+  width: 122px;
+  height: auto;
+}
+
+textarea,
+[contenteditable="true"] {
+  caret-color: var(--claude-accent);
+}
+
+::selection {
+  color: var(--claude-ink);
+  background: #6d4e42;
+}
+
+*:focus-visible {
+  outline: 1px solid var(--claude-accent) !important;
+  outline-offset: 2px;
+}
+
+/* Tool output reads as an integrated terminal, not a floating card. */
+pre,
+code,
+[data-codex-xterm] {
+  font-family: var(--font-mono) !important;
+}
+
+[data-codex-xterm],
+[data-codex-xterm] .xterm-viewport {
+  background: #191816 !important;
+}
+
+:root.electron-light [data-codex-xterm],
+:root.electron-light [data-codex-xterm] .xterm-viewport {
+  background: #edeae3 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
