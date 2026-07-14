@@ -32,6 +32,20 @@ The themed copy is created at `~/Applications/Codex Claude Lab.app`.
 
 Source Serif 4 is bundled as a web font, so no separate font installation is needed. Its original SIL Open Font License is included at `assets/SourceSerif4-OFL.txt`.
 
+### Data isolation
+
+Launch the themed copy with the command printed by the installer, including its
+dedicated `--user-data-dir`. This keeps local settings, caches, window state,
+and local task history separate from the official app. You may need to sign in
+again in the themed copy. Content that is synced by your account can reappear
+after sign-in, but do not assume that every locally stored Codex task or
+preference is automatically shared between the two apps.
+
+You can omit `--user-data-dir` to make the copy share the official app's local
+state, but this is not recommended: the two apps can contend for the same
+files, and the locally ad-hoc-signed copy can trigger extra Keychain access
+prompts.
+
 ## Reapply after updates
 
 Codex updates replace packaged web assets. Keep the original client updated, then run:
