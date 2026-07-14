@@ -16,6 +16,7 @@
   --claude-muted: #b7b0a4;
   --claude-accent: #d97757;
   --claude-accent-hover: #e68a69;
+  --claude-selection: #6d4e42;
 
   --font-sans: "SF Mono", "Cascadia Code", "Menlo", monospace;
   --font-mono: "SF Mono", "Cascadia Code", "Menlo", monospace;
@@ -96,6 +97,7 @@
   --claude-muted: #625c53;
   --claude-accent: #b9553b;
   --claude-accent-hover: #9f452f;
+  --claude-selection: #e7c3b6;
 
   --color-background-button-secondary-hover: #d9d5cc;
   --color-background-accent-active: #96402d;
@@ -172,7 +174,7 @@ textarea,
 
 ::selection {
   color: var(--claude-ink);
-  background: #6d4e42;
+  background: var(--claude-selection);
 }
 
 *:focus-visible {
