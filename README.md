@@ -32,6 +32,16 @@ The themed copy is created at `~/Applications/Codex Claude Lab.app`.
 
 Source Serif 4 is bundled as a web font, so no separate font installation is needed. Its original SIL Open Font License is included at `assets/SourceSerif4-OFL.txt`.
 
+## Patch the installed client directly
+
+To keep the existing Codex login, settings, and local data, run:
+
+```bash
+./install.sh --in-place
+```
+
+Before patching, the installer stores the original `app.asar` under `~/Library/Application Support/Codex Claude Theme/backups/`. Restart Codex when it completes. This replaces the app's official signature with a local ad-hoc signature, and a future Codex update will overwrite the themed assets.
+
 ## Reapply after updates
 
 Codex updates replace packaged web assets. Keep the original client updated, then run:
