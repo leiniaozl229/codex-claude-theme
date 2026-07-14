@@ -4,6 +4,8 @@ macOS patch kit for a local, presentation-only Claude-style Codex experiment.
 
 > Unofficial and unaffiliated with OpenAI or Anthropic. Codex and Claude are trademarks of their respective owners.
 
+[中文使用指南](README.zh-CN.md)
+
 It copies the installed Codex app, injects the CSS/JS/SVG assets in this folder, and ad-hoc signs the copy. It never alters the original app and does not include an OpenAI or Anthropic client binary.
 
 ## Optional custom wordmark
